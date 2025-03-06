@@ -33,6 +33,7 @@
     |-- components
         |-- EditScreenInfo.tsx
         |-- ExternalLink.tsx
+        |-- ProductListItem.tsx
         |-- StyledText.tsx
         |-- Themed.tsx
         |-- __tests__
