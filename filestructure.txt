@@ -44,4 +44,5 @@
         |-- useColorScheme.web.ts
     |-- constants
         |-- Colors.ts
+    |-- types.ts
 |-- tsconfig.json
