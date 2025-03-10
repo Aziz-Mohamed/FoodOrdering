@@ -17,6 +17,7 @@
         |-- favicon.png
         |-- icon.png
         |-- splash-icon.png
+|-- commitlint.config.js
 |-- expo-env.d.ts
 |-- package-lock.json
 |-- package.json
@@ -25,6 +26,10 @@
         |-- (tabs)
             |-- _layout.tsx
             |-- index.tsx
+            |-- menu
+                |-- [id].tsx
+                |-- _layout.tsx
+                |-- index.tsx
             |-- two.tsx
         |-- +html.tsx
         |-- +not-found.tsx
