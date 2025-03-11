@@ -17,7 +17,6 @@
         |-- favicon.png
         |-- icon.png
         |-- splash-icon.png
-|-- commitlint.config.js
 |-- expo-env.d.ts
 |-- package-lock.json
 |-- package.json
