@@ -5,6 +5,7 @@
         |-- router.d.ts
     |-- web
 |-- .gitignore
+|-- .qodo
 |-- app.json
 |-- assets
     |-- data
@@ -33,9 +34,10 @@
         |-- +html.tsx
         |-- +not-found.tsx
         |-- _layout.tsx
-        |-- modal.tsx
+        |-- cart.tsx
     |-- components
         |-- Button.tsx
+        |-- CartListItem.tsx
         |-- EditScreenInfo.tsx
         |-- ExternalLink.tsx
         |-- ProductListItem.tsx
@@ -49,5 +51,8 @@
         |-- useColorScheme.web.ts
     |-- constants
         |-- Colors.ts
+        |-- Images.ts
+    |-- providers
+        |-- CartProvider.tsx
     |-- types.ts
 |-- tsconfig.json
