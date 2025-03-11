@@ -36,6 +36,7 @@
         |-- _layout.tsx
         |-- modal.tsx
     |-- components
+        |-- Button.tsx
         |-- EditScreenInfo.tsx
         |-- ExternalLink.tsx
         |-- ProductListItem.tsx
