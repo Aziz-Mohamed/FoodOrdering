@@ -23,7 +23,15 @@
 |-- package.json
 |-- src
     |-- app
-        |-- (tabs)
+        |-- (admin)
+            |-- _layout.tsx
+            |-- index.tsx
+            |-- menu
+                |-- [id].tsx
+                |-- _layout.tsx
+                |-- index.tsx
+            |-- two.tsx
+        |-- (user)
             |-- _layout.tsx
             |-- index.tsx
             |-- menu
@@ -35,6 +43,7 @@
         |-- +not-found.tsx
         |-- _layout.tsx
         |-- cart.tsx
+        |-- index.tsx
     |-- components
         |-- Button.tsx
         |-- CartListItem.tsx
