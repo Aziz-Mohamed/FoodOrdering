@@ -7,20 +7,20 @@ export default function MenuLayout() {
   return (
     <Stack
       screenOptions={{
-        headerRight: () => (
-          <Link href="/cart" asChild>
-            <Pressable>
-              {({ pressed }) => (
-                <FontAwesome
-                  name="plus-square-o"
-                  size={25}
-                  color={Colors.light.tint}
-                  style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
-                />
-              )}
-            </Pressable>
-          </Link>
-        ),
+        // headerRight: () => (
+        //   <Link href="/" asChild>
+        //     <Pressable>
+        //       {({ pressed }) => (
+        //         <FontAwesome
+        //           name="plus-square-o"
+        //           size={25}
+        //           color={Colors.light.tint}
+        //           style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+        //         />
+        //       )}
+        //     </Pressable>
+        //   </Link>
+        // ),
       }}
     >
       <Stack.Screen
@@ -28,7 +28,7 @@ export default function MenuLayout() {
         options={{
           title: "Menu",
           headerRight: () => (
-            <Link href="/cart" asChild>
+            <Link href="/(admin)/menu/create" asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome
@@ -50,7 +50,7 @@ export default function MenuLayout() {
         options={{
           title: "Menu",
           headerRight: () => (
-            <Link href="/cart" asChild>
+            <Link href="/" asChild>
               <Pressable>
                 {({ pressed }) => (
                   <FontAwesome

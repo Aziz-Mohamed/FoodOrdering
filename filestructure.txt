@@ -29,6 +29,7 @@
             |-- menu
                 |-- [id].tsx
                 |-- _layout.tsx
+                |-- create.tsx
                 |-- index.tsx
             |-- two.tsx
         |-- (user)
