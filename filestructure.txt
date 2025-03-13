@@ -32,6 +32,10 @@
                 |-- create.tsx
                 |-- index.tsx
             |-- two.tsx
+        |-- (auth)
+            |-- layout.tsx
+            |-- sign-in.tsx
+            |-- sign-up.tsx
         |-- (user)
             |-- _layout.tsx
             |-- index.tsx
