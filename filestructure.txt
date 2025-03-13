@@ -31,7 +31,10 @@
                 |-- _layout.tsx
                 |-- create.tsx
                 |-- index.tsx
-            |-- two.tsx
+            |-- orders
+                |-- [id].tsx
+                |-- _layout.tsx
+                |-- index.tsx
         |-- (auth)
             |-- layout.tsx
             |-- sign-in.tsx
@@ -43,7 +46,10 @@
                 |-- [id].tsx
                 |-- _layout.tsx
                 |-- index.tsx
-            |-- two.tsx
+            |-- orders
+                |-- [id].tsx
+                |-- _layout.tsx
+                |-- index.tsx
         |-- +html.tsx
         |-- +not-found.tsx
         |-- _layout.tsx
@@ -54,6 +60,8 @@
         |-- CartListItem.tsx
         |-- EditScreenInfo.tsx
         |-- ExternalLink.tsx
+        |-- OrderItemListItem.tsx
+        |-- OrderListItem.tsx
         |-- ProductListItem.tsx
         |-- StyledText.tsx
         |-- Themed.tsx
