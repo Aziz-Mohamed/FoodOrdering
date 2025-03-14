@@ -4,6 +4,7 @@ import Colors from "@/constants/Colors";
 import { OrderStatusList } from "@/types";
 import orders from "@assets/data/orders";
 import { Stack, useLocalSearchParams } from "expo-router";
+import React from "react";
 import { FlatList, Pressable, Text, View } from "react-native";
 
 export default function OrderDetailsScreen() {

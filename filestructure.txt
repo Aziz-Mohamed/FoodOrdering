@@ -34,7 +34,10 @@
             |-- orders
                 |-- [id].tsx
                 |-- _layout.tsx
-                |-- index.tsx
+                |-- list
+                    |-- _layout.tsx
+                    |-- archive.tsx
+                    |-- index.tsx
         |-- (auth)
             |-- layout.tsx
             |-- sign-in.tsx
