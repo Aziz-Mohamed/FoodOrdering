@@ -55,6 +55,7 @@
                 |-- index.tsx
         |-- +html.tsx
         |-- +not-found.tsx
+        |-- .index.tsx.swp
         |-- _layout.tsx
         |-- cart.tsx
         |-- index.tsx
@@ -77,7 +78,10 @@
     |-- constants
         |-- Colors.ts
         |-- Images.ts
+    |-- lib
+        |-- supabase.ts
     |-- providers
+        |-- AuthProvider.tsx
         |-- CartProvider.tsx
     |-- types.ts
 |-- tsconfig.json
