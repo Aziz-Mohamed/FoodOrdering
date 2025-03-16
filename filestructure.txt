@@ -80,6 +80,7 @@
     |-- constants
         |-- Colors.ts
         |-- Images.ts
+    |-- database.types.ts
     |-- lib
         |-- supabase.ts
     |-- providers

@@ -1,12 +1,12 @@
 import Colors from "@/constants/Colors";
-import { Image, StyleSheet, Text, View, Pressable } from "react-native";
-import { Product } from "@/types";
-import { Link, useSegments } from "expo-router";
 import { defaultPizzaImage } from "@/constants/Images";
+import { Tables } from "@/database.types";
+import { Link, useSegments } from "expo-router";
+import { Image, Pressable, StyleSheet, Text } from "react-native";
 
 
 type ProductListItemProps = {
-  product: Product;
+  product: Tables<"products">;
 };
 const ProductListItem = ({ product }: ProductListItemProps) => {
   const segments = useSegments();
