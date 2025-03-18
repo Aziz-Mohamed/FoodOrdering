@@ -74,6 +74,7 @@
         |-- OrderItemListItem.tsx
         |-- OrderListItem.tsx
         |-- ProductListItem.tsx
+        |-- RemoteImage.tsx
         |-- StyledText.tsx
         |-- Themed.tsx
         |-- __tests__
