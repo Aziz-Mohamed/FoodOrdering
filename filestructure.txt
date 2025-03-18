@@ -23,6 +23,11 @@
 |-- package.json
 |-- src
     |-- api
+        |-- order-items
+            |-- index.ts
+        |-- orders
+            |-- Subscriptions.ts
+            |-- index.ts
         |-- products
             |-- index.ts
     |-- app
