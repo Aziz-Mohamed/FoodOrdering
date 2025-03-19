@@ -23,7 +23,8 @@ const AuthContext = createContext<AuthData>({
 
 export default function AuthProvider({ children }: PropsWithChildren) {
   const [session, setSession] = useState<Session | null>(null);
-  const [profile, setProfile] = useState<{ group: string } | null>(null);  const [loading, setLoading] = useState(true);
+  const [profile, setProfile] = useState<{ group: string } | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchSession = async () => {
@@ -44,7 +45,7 @@ export default function AuthProvider({ children }: PropsWithChildren) {
       setLoading(false);
     };
     fetchSession();
-    
+
     //subscribe to auth state changes
     supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
@@ -52,7 +53,7 @@ export default function AuthProvider({ children }: PropsWithChildren) {
   }, []);
   return (
     <AuthContext.Provider
-      value={{ session, loading, profile, isAdmin: profile?.group === 'ADMIN' }}
+      value={{ session, loading, profile, isAdmin: profile?.group === "ADMIN" }}
     >
       {children}
     </AuthContext.Provider>

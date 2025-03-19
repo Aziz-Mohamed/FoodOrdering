@@ -61,6 +61,7 @@
                 |-- [id].tsx
                 |-- _layout.tsx
                 |-- index.tsx
+            |-- profile.tsx
         |-- +html.tsx
         |-- +not-found.tsx
         |-- _layout.tsx

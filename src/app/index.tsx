@@ -1,18 +1,20 @@
-import { View, Text, ActivityIndicator } from "react-native";
-import React from "react";
-import Button from "../components/Button";
-import { Link, Redirect } from "expo-router";
-import { useAuth } from "@/providers/AuthProvider";
 import { supabase } from "@/lib/supabase";
+import { useAuth } from "@/providers/AuthProvider";
+import { Link, Redirect } from "expo-router";
+import React from "react";
+import { ActivityIndicator, View } from "react-native";
+import Button from "../components/Button";
 
 const index = () => {
   const { session, loading, isAdmin } = useAuth();
+
+  console.log('Session:', session);
 
   if (loading) {
     return <ActivityIndicator />;
   }
   if (!session) {
-    return <Redirect href={"/sign-in"} />;
+    return <Redirect href={"/(auth)/sign-in"} />;
   }
   if(!isAdmin){
     return <Redirect href={"/(user)"} />;

@@ -1,20 +1,21 @@
-import { useDeleteProduct, useInsertProduct, useProduct, useUpdateProduct } from "@/api/products";
+import {
+  useDeleteProduct,
+  useInsertProduct,
+  useProduct,
+  useUpdateProduct,
+} from "@/api/products";
 import Button from "@/components/Button";
 import Colors from "@/constants/Colors";
 import { defaultPizzaImage } from "@/constants/Images";
 import * as ImagePicker from "expo-image-picker";
 import { Stack } from "expo-router";
-import {
-  useLocalSearchParams,
-  useRouter
-} from "expo-router/build/hooks";
+import { useLocalSearchParams, useRouter } from "expo-router/build/hooks";
 import React, { useEffect, useState } from "react";
 import { Alert, Image, StyleSheet, Text, TextInput, View } from "react-native";
-import * as FileSystem from 'expo-file-system';
+import * as FileSystem from "expo-file-system";
 import { randomUUID } from "expo-crypto";
 import { supabase } from "@/lib/supabase";
 import { decode } from "base64-arraybuffer";
-
 
 const CreateProductScreen = () => {
   const [name, setName] = useState("");
@@ -23,13 +24,15 @@ const CreateProductScreen = () => {
   const [image, setImage] = useState<string | null>(null);
 
   const { id: idString } = useLocalSearchParams();
-  const id = parseFloat(typeof idString === "string" ? idString : idString?.[0]);
+  const id = parseFloat(
+    typeof idString === "string" ? idString : idString?.[0]
+  );
   const isUpdating = !!id;
 
   const { mutate: insertProduct } = useInsertProduct();
   const { mutate: updateProduct } = useUpdateProduct();
   const { data: updatingProduct } = useProduct(id);
-  const {mutate: deleteProduct} = useDeleteProduct(); 
+  const { mutate: deleteProduct } = useDeleteProduct();
   const router = useRouter();
 
   useEffect(() => {
@@ -70,11 +73,14 @@ const CreateProductScreen = () => {
     }
   };
 
-  const onUpdate = () => {
+  const onUpdate = async () => {
     if (!validateInput()) return;
+
+    const imagePath = await uploadImage();
+
     //save in the database
     updateProduct(
-      { name, price: parseFloat(price), image, id },
+      { id, name, price: parseFloat(price), image: imagePath },
       {
         onSuccess: () => {
           resetFields();
@@ -87,7 +93,7 @@ const CreateProductScreen = () => {
     if (!validateInput()) return;
 
     const imagePath = await uploadImage();
-    
+
     console.warn("Creating product", name);
     //save in the database
     insertProduct(
@@ -116,7 +122,7 @@ const CreateProductScreen = () => {
   const onDelete = () => {
     deleteProduct(id, {
       onSuccess: () => {
-        router.replace('/(admin)');
+        router.replace("/(admin)");
       },
     });
   };
@@ -133,22 +139,21 @@ const CreateProductScreen = () => {
     ]);
   };
 
-  
   const uploadImage = async () => {
-    if (!image?.startsWith('file://')) {
+    if (!image?.startsWith("file://")) {
       return;
     }
-  
+
     const base64 = await FileSystem.readAsStringAsync(image, {
-      encoding: 'base64',
+      encoding: "base64",
     });
     const filePath = `${randomUUID()}.png`;
-    const contentType = 'image/png';
+    const contentType = "image/png";
 
     const { data, error } = await supabase.storage
-      .from('product-images')
+      .from("product-images")
       .upload(filePath, decode(base64), { contentType });
-  
+
     if (data) {
       return data.path;
     }
