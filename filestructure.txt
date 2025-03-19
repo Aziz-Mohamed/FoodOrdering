@@ -95,4 +95,16 @@
         |-- CartProvider.tsx
         |-- QueryProvider.tsx
     |-- types.ts
+|-- supabase
+    |-- .gitignore
+    |-- .temp
+        |-- cli-latest
+        |-- gotrue-version
+        |-- pooler-url
+        |-- postgres-version
+        |-- project-ref
+        |-- rest-version
+    |-- config.toml
+    |-- migrations
+        |-- 20250319135028_remote_schema.sql
 |-- tsconfig.json
