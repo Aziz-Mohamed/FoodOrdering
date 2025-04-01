@@ -1,14 +1,15 @@
 {
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
+    "typeRoots": ["node_modules/@types"],
     "strict": true,
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
       "@components/*": ["src/components/*"],
-      "@assets/*": ["assets/*"],
-      
+      "@assets/*": ["assets/*"]
     }
   },
+  "moduleResolution": "bundler",
   "include": ["**/*.ts", "**/*.tsx", ".expo/types/**/*.ts", "expo-env.d.ts"]
 }

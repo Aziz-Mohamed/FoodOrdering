@@ -1,3 +1,4 @@
+|-- .env
 |-- .expo
     |-- README.md
     |-- devices.json
@@ -18,7 +19,9 @@
         |-- favicon.png
         |-- icon.png
         |-- splash-icon.png
+|-- deno.lock
 |-- expo-env.d.ts
+|-- import_map.json
 |-- package-lock.json
 |-- package.json
 |-- src
@@ -96,6 +99,8 @@
         |-- QueryProvider.tsx
     |-- types.ts
 |-- supabase
+    |-- .branches
+        |-- _current_branch
     |-- .gitignore
     |-- .temp
         |-- cli-latest
@@ -105,6 +110,14 @@
         |-- project-ref
         |-- rest-version
     |-- config.toml
+    |-- functions
+        |-- _utils
+            |-- stripe.ts
+        |-- payment-sheet
+            |-- .npmrc
+            |-- deno.json
+            |-- deno.lock
+            |-- index.ts
     |-- migrations
         |-- 20250319135028_remote_schema.sql
 |-- tsconfig.json

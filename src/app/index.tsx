@@ -3,12 +3,10 @@ import { useAuth } from "@/providers/AuthProvider";
 import { Link, Redirect } from "expo-router";
 import React from "react";
 import { ActivityIndicator, View } from "react-native";
-import Button from "../components/Button";
+import Button from "@components/Button";
 
 const index = () => {
   const { session, loading, isAdmin } = useAuth();
-
-  console.log('Session:', session);
 
   if (loading) {
     return <ActivityIndicator />;

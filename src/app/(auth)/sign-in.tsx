@@ -2,8 +2,8 @@ import { supabase } from "@/lib/supabase";
 import { Link, Stack } from "expo-router";
 import React, { useState } from "react";
 import { Alert, StyleSheet, Text, TextInput, View } from "react-native";
-import Button from "../../components/Button";
-import Colors from "../../constants/Colors";
+import Button from "@components/Button";
+import Colors from "@/constants/Colors";
 
 export default function SignInScreen () {
   const [email, setEmail] = useState("");
@@ -17,8 +17,7 @@ export default function SignInScreen () {
       email,
       password,
     });
-console.log("data",data)
-console.log("error",error)
+
     if (error) {
       Alert.alert(error.message);
     }
