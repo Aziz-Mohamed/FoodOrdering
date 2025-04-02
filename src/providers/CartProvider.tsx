@@ -5,6 +5,8 @@ import { CartItem } from "@/types";
 import { randomUUID } from "expo-crypto";
 import { useRouter } from "expo-router";
 import { createContext, PropsWithChildren, useContext, useState } from "react";
+import { initialisePaymentSheet, openPaymentSheet } from "@/lib/stripe.ts";
+
 
 type Product = Tables<"products">;
 
@@ -75,7 +77,14 @@ function CartProvider({ children }: PropsWithChildren) {
 
   const clearCart = () => setItems([]);
 
-  const checkout = () => {
+  const checkout = async() => {
+
+    await initialisePaymentSheet(Math.floor(total * 100));
+    const paid = await openPaymentSheet();
+
+    if(!paid) return;
+
+
     insertOrder(
       { total },
       {

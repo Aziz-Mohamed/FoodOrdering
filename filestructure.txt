@@ -92,6 +92,7 @@
         |-- Images.ts
     |-- database.types.ts
     |-- lib
+        |-- stripe.ts
         |-- supabase.ts
     |-- providers
         |-- AuthProvider.tsx
