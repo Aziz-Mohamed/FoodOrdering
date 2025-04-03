@@ -92,12 +92,14 @@
         |-- Images.ts
     |-- database.types.ts
     |-- lib
+        |-- notifications.ts
         |-- stripe.ts
         |-- supabase.ts
     |-- providers
         |-- AuthProvider.tsx
         |-- CartProvider.tsx
         |-- QueryProvider.tsx
+        |-- notificationProvider.tsx
     |-- types.ts
 |-- supabase
     |-- .branches
