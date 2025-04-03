@@ -1,7 +1,6 @@
 import { Alert } from "react-native";
-import { supabase } from "./supabase.ts";
 import { initPaymentSheet, presentPaymentSheet } from "@stripe/stripe-react-native";
-// import { supabase } from "@/lib/supabase";
+import { supabase } from "@/lib/supabase";
 
 export const fetchPaymentSheetParams = async (amount: number) => {
   const { data, error } = await supabase.functions.invoke("payment-sheet", {

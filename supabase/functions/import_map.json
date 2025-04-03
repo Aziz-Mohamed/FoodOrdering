@@ -1,0 +1,9 @@
+{
+  "imports": {
+    "@/*": "../../src/*",
+    "@components/*": "../../src/components/*",
+    "@assets/*": "../../assets/*",
+    "@/lib/supabase": "../../src/lib/supabase.ts",
+    "@/lib/stripe": "../../src/lib/stripe.ts"
+  }
+}

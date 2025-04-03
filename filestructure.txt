@@ -21,7 +21,6 @@
         |-- splash-icon.png
 |-- deno.lock
 |-- expo-env.d.ts
-|-- import_map.json
 |-- package-lock.json
 |-- package.json
 |-- src
@@ -114,6 +113,8 @@
     |-- functions
         |-- _utils
             |-- stripe.ts
+            |-- supabase.ts
+        |-- import_map.json
         |-- payment-sheet
             |-- .npmrc
             |-- deno.json
@@ -121,4 +122,6 @@
             |-- index.ts
     |-- migrations
         |-- 20250319135028_remote_schema.sql
+        |-- 20250402135907_remote_schema.sql
+        |-- 20250402183702_add_stripe_field.sql
 |-- tsconfig.json

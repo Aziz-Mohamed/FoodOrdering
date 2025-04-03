@@ -1,3 +1,4 @@
+import { createOrRetrieveProfile } from "../_utils/supabase.ts";
 // Follow this setup guide to integrate the Deno language server with your editor:
 // https://deno.land/manual/getting_started/setup_your_environment
 // This enables autocomplete, go to definition, etc.
@@ -9,9 +10,11 @@ import type { Stripe } from "@types/stripe";
 
 console.log("Hello from Functions!");
 
-Deno.serve(async (req) => {
+Deno.serve(async (req: Request) => {
   try {
     const { amount } = await req.json();
+
+    const customer = await createOrRetrieveProfile(req);
 
     const paymentIntent = await (stripe as Stripe).paymentIntents.create({
       amount: amount,
