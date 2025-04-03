@@ -20,6 +20,7 @@
         |-- icon.png
         |-- splash-icon.png
 |-- deno.lock
+|-- eas.json
 |-- expo-env.d.ts
 |-- package-lock.json
 |-- package.json
