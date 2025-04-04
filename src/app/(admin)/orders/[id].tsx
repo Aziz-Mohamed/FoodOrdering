@@ -3,7 +3,6 @@ import OrderItemListItem from "@/components/OrderItemListItem";
 import OrderListItem from "@/components/OrderListItem";
 import Colors from "@/constants/Colors";
 import { OrderStatusList } from "@/types";
-import orders from "@assets/data/orders";
 import { Stack, useLocalSearchParams } from "expo-router";
 import React from "react";
 import {
@@ -13,6 +12,7 @@ import {
   Text,
   View,
 } from "react-native";
+import { notifyUserAboutOrderUpdate } from "../../../lib/notifications.ts";
 
 export default function OrderDetailsScreen() {
   const { id: idString } = useLocalSearchParams();
@@ -20,8 +20,14 @@ export default function OrderDetailsScreen() {
   const { data: order, isLoading, error } = useOrderDetails(id);
   const { mutate: updateOrder } = useUpdateOrder();
 
-  const updateStatus = (status) => {
-    updateOrder({ id: id, updatedFields: {status} });
+  const updateStatus = async (status: string) => {
+    await updateOrder({
+      id: id,
+      updatedFields: { status },
+    });
+    if (order) {
+      await notifyUserAboutOrderUpdate({...order, status});
+    }
   };
 
   if (isLoading) {
